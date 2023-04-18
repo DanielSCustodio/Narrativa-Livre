@@ -44,8 +44,8 @@ h1 {
 }
 
 .form,
-.books-container,
-.book-page {
+.stories-container,
+.story-page {
   width: 450px;
   margin: 0 auto;
   padding: 2rem;
@@ -84,7 +84,7 @@ h1 {
   color: aliceblue;
 }
 
-.book {
+.story {
   margin: 1rem 0;
 }
 
@@ -105,15 +105,15 @@ h1 {
   color: aliceblue;
 }
 
-.book-page {
+.story-page {
   margin-top: 5rem;
 }
 
-.book-page h1 {
+.story-page h1 {
   color: rgb(88, 146, 173);
 }
 
-.book-page p {
+.story-page p {
   text-align: center;
 }
 

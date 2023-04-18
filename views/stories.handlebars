@@ -1,0 +1,12 @@
+<h1>Livros Disponíveis</h1>
+
+<div class="stories-container">
+  {{#each stories}}
+    <div class="story">
+      <a href="/stories/{{this.id}}">
+        {{this.id}} - <span class="bold">{{this.title}}</span> - {{this.author}}
+      </a>
+      <img src={{this.image}} alt="">
+    </div>
+  {{/each}}
+</div>

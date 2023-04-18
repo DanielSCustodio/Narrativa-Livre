@@ -1,125 +1,142 @@
-const express = require("express");
-const exphbs = require("express-handlebars");
-const mysql = require("mysql");
-require("custom-env").env("development.local");
+const express = require('express');
+const exphbs = require('express-handlebars');
+require('custom-env').env('development.local');
+const pool = require('./database/connection');
 
 const app = express();
 
-app.engine("handlebars", exphbs.engine());
-app.set("view engine", "handlebars");
-app.use(express.static("public"));
-
-app.get("/", (req, res) => {
-  res.render("home");
-});
+app.engine('handlebars', exphbs.engine());
+app.set('view engine', 'handlebars');
+app.use(express.static('public'));
 
 app.use(
   //capturar o body
   express.urlencoded({
     extended: true,
-  })
+  }),
 );
 
 app.use(express.json()); //capturar o body
 
-const conn = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
+app.get('/', (req, res) => {
+  res.render('home');
 });
 
-app.post("/books/insertbook", (req, res) => {
+app.post('/stories/insertstory', (req, res) => {
   const title = req.body.title;
-  const pageqty = req.body.pageqty;
+  const author = req.body.author;
+  const image = req.body.image;
+  const content = req.body.content;
 
-  const sql = `INSERT INTO books (title, pageqty) VALUES ('${title}','${pageqty}')`;
-  conn.query(sql, (err) => {
+  const sql = 'INSERT INTO story (??, ??, ??, ??) VALUES (?,?,?,?)';
+  const data = [
+    'title',
+    'author',
+    'image',
+    'content',
+    title,
+    author,
+    image,
+    content,
+  ];
+
+  pool.query(sql, data, (err) => {
     if (err) {
       console.log(err);
       return;
     }
-    res.redirect("/books");
+    res.redirect('/stories');
   });
 });
 
-app.get("/books/:id", (req, res) => {
+app.get('/stories/:id', (req, res) => {
   const id = req.params.id;
-  const sql = `SELECT * FROM books WHERE id=${id}`;
-  conn.query(sql, (err, data) => {
+  const sql = 'SELECT * FROM story WHERE ??=?';
+  const data = ['id', id];
+  pool.query(sql, data, (err, data) => {
     if (err) {
       console.log(err);
       return;
     }
 
-    const book = data[0];
+    const story = data[0];
 
-    res.render("book", { book });
+    res.render('story', { story });
   });
 });
 
-app.get("/books/edit/:id", (req, res) => {
+app.get('/stories/edit/:id', (req, res) => {
   const id = req.params.id;
-  const sql = `SELECT * FROM books WHERE id=${id}`;
+  const sql = 'SELECT * FROM story WHERE ??=?';
+  const data = ['id', id];
 
-  conn.query(sql, (err, data) => {
+  pool.query(sql, data, (err, data) => {
     if (err) {
       console.log(err);
       return;
     }
-    const book = data[0];
-    res.render("editbook", { book });
+    const story = data[0];
+    res.render('editstory', { story });
   });
 });
 
-app.get("/books", (req, res) => {
-  const sql = "SELECT * FROM books";
+app.get('/stories', (req, res) => {
+  const sql = 'SELECT * FROM story';
 
-  conn.query(sql, (err, data) => {
+  pool.query(sql, (err, data) => {
     if (err) {
       console.log(err);
       return;
     }
 
-    const books = data;
-    res.render("books", { books });
+    const stories = data;
+    res.render('stories', { stories });
   });
 });
 
-app.post("/books/updatebook", (req, res) => {
+app.post('/stories/updatestory', (req, res) => {
   const id = req.body.id;
   const title = req.body.title;
-  const pageqty = req.body.pageqty;
+  const author = req.body.author;
+  const image = req.body.image;
+  const content = req.body.content;
 
-  const sql = `UPDATE books SET title='${title}', pageqty='${pageqty}' WHERE id=${id}`;
+  const sql = 'UPDATE story SET ??=?, ??=?, ??=?, ??=? WHERE ??=?';
+  const data = [
+    'title',
+    title,
+    'author',
+    author,
+    'image',
+    image,
+    'content',
+    content,
+    'id',
+    id,
+  ];
 
-  conn.query(sql, (err) => {
+  pool.query(sql, data, (err) => {
     if (err) {
       console.log(err);
       return;
     }
-    res.redirect("/books");
+    res.redirect('/stories');
   });
 });
 
-app.post("/books/remove/:id", (req, res) => {
-  const id = req.params.id
-  const sql = `DELETE FROM books WHERE id=${id}`;
+app.post('/stories/remove/:id', (req, res) => {
+  const id = req.params.id;
+  const sql = 'DELETE  FROM story WHERE ??=?';
+  const data = ['id', id];
 
-  conn.query(sql, (err) => {
+  pool.query(sql, data, (err) => {
     if (err) {
       console.log(err);
     }
-    res.redirect("/books");
+    res.redirect('/stories');
   });
 });
 
-conn.connect((err) => {
-  if (err) {
-    console.log(err);
-  }
-  console.log("Aplicação conectada ao banco de dados");
-  app.listen(3000, () => {
-    console.log("Aplicação em execução");
-  });
+app.listen(process.env.PORT, () => {
+  console.log(`Aplicação em execução na porta ${process.env.PORT}`);
 });
