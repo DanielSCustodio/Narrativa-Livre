@@ -1,8 +1,7 @@
 <div class="story-page">
-  <a href="/stories">Voltar</a>
   <div class="container">
     <h1>{{story.title}}</h1>
-    <p>Este livro contém {{story.pageqty}} páginas.</p>
+    <p> de {{story.author}}</p>
     <div class="actions">
       <a href="/stories/edit/{{story.id}}" id="edit">&#10000;</a>
       <form action="/stories/remove/{{story.id}}" method="post">

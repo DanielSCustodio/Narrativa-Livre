@@ -95,21 +95,24 @@ app.get('/stories', (req, res) => {
 });
 
 app.post('/stories/updatestory', (req, res) => {
+  const id = req.body.id;
   const title = req.body.title;
   const author = req.body.author;
   const image = req.body.image;
   const content = req.body.content;
 
-  const sql = 'INSERT story SET ??=?, ??=?, ??=?, ??=? WHERE ??=?';
+  const sql = 'UPDATE story SET ??=?, ??=?, ??=?, ??=? WHERE ??=?';
   const data = [
-    title,
     'title',
-    author,
+    title,
     'author',
-    image,
+    author,
     'image',
+    image,
     'content',
     content,
+    'id',
+    id,
   ];
 
   pool.query(sql, data, (err) => {

@@ -4,9 +4,9 @@
   {{#each stories}}
     <div class="story">
       <a href="/stories/{{this.id}}">
-        {{this.id}} - <span class="bold">{{this.title}}</span> - {{this.pageqty}} páginas
+        {{this.id}} - <span class="bold">{{this.title}}</span> - {{this.author}}
       </a>
+      <img src={{this.image}} alt="">
     </div>
   {{/each}}
-  <a href="/" class="add"> + </a>
 </div>
