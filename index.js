@@ -22,6 +22,10 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+
 app.post('/stories/insertstory', (req, res) => {
   const title = req.body.title;
   const author = req.body.author;
