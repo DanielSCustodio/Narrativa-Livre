@@ -4,7 +4,7 @@ body::-webkit-scrollbar
   width: 8px
 
 body::-webkit-scrollbar-track
-  background: variables.$title-color
+  background: variables.$text-color
 
 body::-webkit-scrollbar-thumb
   background-color: variables.$primary-color
@@ -14,7 +14,7 @@ html
   font-size: 14px
   background-color: variables.$bg-primary-color
   scroll-behavior: smooth
-  color: variables.$title-color
+  color: variables.$text-color
 
 *
   padding: 0
@@ -25,16 +25,23 @@ html
 
 a
   text-decoration: none
-  transition: .4s
-  color: variables.$title-color
+  transition: .8s
+  color: variables.$text-color
   font-weight: 500
 
   &:hover
     color: variables.$primary-color
 
-input
+input, textarea
   border: none
   outline: none
+  resize: none
+  box-shadow: 1px 1px 2px #00000066
+
+textarea:focus, input:focus, select:focus
+  box-shadow: 0 0 0 0
+  border: 0 none
+  outline: 0
 
 ul
   list-style: none

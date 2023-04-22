@@ -1,0 +1,25 @@
+@use '../base/variables'
+@use './mixins'
+
+.navbar
+  background: variables.$second-color
+  position: fixed
+  width: 100%
+  z-index: 9999
+
+  &-container
+    @include mixins.center-content()
+    padding: 1rem
+
+  ul
+    display:  flex
+    padding: 0
+    gap: 2rem
+  
+  a
+    color:  #d03d86
+    font-size: 1.3rem
+
+    &:hover
+      color: variables.$bg-primary-color
+    

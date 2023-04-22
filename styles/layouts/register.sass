@@ -1,0 +1,22 @@
+@use '../base/variables'
+@use './mixins'
+
+.register
+  @include mixins.center-content()
+  flex-direction: column
+
+.form
+  width: 70%
+
+  .form-control
+    display: flex
+    flex-direction: column
+    margin-bottom: 1.2rem
+
+    label
+      display: none
+    
+    input, textarea
+      padding: 1rem
+      border-radius: 4px
+      color: variables.$text-color

@@ -28,7 +28,7 @@ html {
 
 a {
   text-decoration: none;
-  transition: 0.4s;
+  transition: 0.8s;
   color: #070D0D;
   font-weight: 500;
 }
@@ -36,13 +36,127 @@ a:hover {
   color: #B30049;
 }
 
-input {
+input, textarea {
   border: none;
   outline: none;
+  resize: none;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
 }
 
 ul {
   list-style: none;
+}
+
+.footer {
+  background: #1F3B4D;
+  padding: 1rem 0;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  padding: 0;
+  color: #EDC8FE;
+}
+.footer-container p {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.footer-container h6 {
+  font-size: 1.5rem;
+  letter-spacing: 2rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.footer-container img {
+  object-fit: contain;
+}
+
+.navbar {
+  background: #1F3B4D;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  padding: 1rem;
+}
+.navbar ul {
+  display: flex;
+  padding: 0;
+  gap: 2rem;
+}
+.navbar a {
+  color: #d03d86;
+  font-size: 1.3rem;
+}
+.navbar a:hover {
+  color: #EDC8FE;
+}
+
+.register {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  flex-direction: column;
+}
+
+.form {
+  width: 70%;
+}
+.form .form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+.form .form-control label {
+  display: none;
+}
+.form .form-control input, .form .form-control textarea {
+  padding: 1rem;
+  border-radius: 4px;
+  color: #070D0D;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  color: #B30049;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: #B30049;
+  color: #EDC8FE;
+  transition: 0.8s;
+}
+.btn:hover {
+  background-color: #1F3B4D;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
