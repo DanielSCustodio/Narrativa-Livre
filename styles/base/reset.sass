@@ -1,0 +1,40 @@
+@use 'variables'
+
+body::-webkit-scrollbar
+  width: 8px
+
+body::-webkit-scrollbar-track
+  background: variables.$title-color
+
+body::-webkit-scrollbar-thumb
+  background-color: variables.$primary-color
+  border-radius: 50px
+
+html
+  font-size: 14px
+  background-color: variables.$bg-primary-color
+  scroll-behavior: smooth
+  color: variables.$title-color
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  font-family: 'Poppins', sans-serif
+  font-size: 1rem
+
+a
+  text-decoration: none
+  transition: .4s
+  color: variables.$title-color
+  font-weight: 500
+
+  &:hover
+    color: variables.$primary-color
+
+input
+  border: none
+  outline: none
+
+ul
+  list-style: none
