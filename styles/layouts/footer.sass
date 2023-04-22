@@ -1,0 +1,26 @@
+@use '../base/variables'
+@use './mixins'
+  
+.footer  
+  background: variables.$second-color
+  padding: 1rem 0
+  
+  &-container
+    @include mixins.center-content
+    padding: 0
+    color: variables.$bg-primary-color
+
+    p
+      font-size: 0.8rem
+      font-weight: 500
+
+    h6
+      font-size: 1.5rem
+      letter-spacing: 2rem
+      font-weight: 100
+      text-transform: uppercase
+
+
+    img
+      object-fit: contain
+  

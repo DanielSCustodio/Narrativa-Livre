@@ -1,12 +1,15 @@
-<h1>Livros Disponíveis</h1>
-
-<div class="stories-container">
+<div class='stories-container'>
+  <h1 class='title'>Livros Disponíveis</h1>
   {{#each stories}}
-    <div class="story">
-      <a href="/stories/{{this.id}}">
-        {{this.id}} - <span class="bold">{{this.title}}</span> - {{this.author}}
-      </a>
-      <img src={{this.image}} alt="">
+    <div class='story'>
+      <a href='/stories/{{this.id}}'>
+        <img src={{this.image}} alt={{this.title}} />
+        <div class="info">
+          <p class='info-id'>Referência: {{this.id}}</p>
+          <h3 class='info-title'>Título: {{this.title}} </h3>
+          <h3 class='info-author'>Autor: {{this.author}}</h3>
+        </a>
+      </div>
     </div>
   {{/each}}
 </div>
