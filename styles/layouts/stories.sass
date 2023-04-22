@@ -1,0 +1,43 @@
+@use '../base/variables'
+@use './mixins'
+
+.stories-container
+  @include mixins.center-content()
+  flex-direction: column
+  justify-content: start
+  min-height: 100vh
+
+  .story
+    display: flex
+    align-items: center
+    width: 100%
+    padding: 1rem
+    border-radius: 4px
+    background-color: #8116b324
+    margin-bottom: 1rem
+    box-shadow: 1px 1px 2px #00000066
+
+    a:hover
+      color: variables.$second-color
+
+    img
+      width: 100px
+      height: 100px
+      object-fit: cover
+      border-radius: 4px
+
+    .info
+      margin-left: 2rem
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      height: auto
+
+      &-id, &-author, &-title
+        font-size: 1.2rem
+        font-weight: 300
+
+      &-title
+        margin: 0.5rem 0
+  .story:nth-child(2n+1)
+    background-color: #8116b311

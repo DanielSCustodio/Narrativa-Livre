@@ -1,11 +1,20 @@
 <div class="story-page">
+
   <div class="container">
-    <h1>{{story.title}}</h1>
-    <p> de {{story.author}}</p>
-    <div class="actions">
-      <a href="/stories/edit/{{story.id}}" id="edit">&#10000;</a>
-      <form action="/stories/remove/{{story.id}}" method="post">
-        <input type="submit" value="&#10005;">
-      </form>
-    </div>
+    <aside class="container-actions">
+      <img src={{story.image}} alt={{story.title}}>
+      <div class="container-actions-items">
+        <a href="/stories/edit/{{story.id}}" id="edit" class="edit"><i class="fa-regular fa-pen-to-square"></i></a>
+        <form action="/stories/remove/{{story.id}}" method="post">
+          <button><i class="fa-regular fa-trash-can"></i></button>
+        </form>
+      </div>
+    </aside>
+  <div class="container-infos">
+    <h1 class="title">{{story.title}}</h1>
+    <p class="author"> {{story.author}}</p>
+    <p class="content">{{story.content}}</p>
   </div>
+  </div>
+
+  
