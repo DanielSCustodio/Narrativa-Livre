@@ -45,7 +45,7 @@ app.post('/stories/insertstory', (req, res) => {
       console.log(err);
       return;
     }
-    res.redirect('/stories');
+    res.redirect('/');
   });
 });
 
@@ -120,7 +120,7 @@ app.post('/stories/updatestory', (req, res) => {
       console.log(err);
       return;
     }
-    res.redirect('/stories');
+    res.redirect('/');
   });
 });
 
