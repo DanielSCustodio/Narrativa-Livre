@@ -301,6 +301,19 @@ ul {
   background-color: rgba(129, 22, 179, 0.0666666667);
 }
 
+.container-404 {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .title {
   font-size: 2rem;
   text-align: center;
