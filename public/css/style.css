@@ -111,34 +111,6 @@ ul {
   color: rgba(240, 234, 242, 0.7137254902);
 }
 
-.register {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.form {
-  width: 70%;
-}
-.form .form-control {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.2rem;
-}
-.form .form-control label {
-  display: none;
-}
-.form .form-control input, .form .form-control textarea {
-  padding: 1rem;
-  border-radius: 4px;
-}
-
 .stories-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -282,6 +254,34 @@ ul {
 .btn:hover {
   background-color: #1F3B4D;
   cursor: pointer;
+}
+
+.container-form {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.form {
+  width: 70%;
+}
+.form .form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+.form .form-control label {
+  display: none;
+}
+.form .form-control input, .form .form-control textarea {
+  padding: 1rem;
+  border-radius: 4px;
 }
 
 /*# sourceMappingURL=style.css.map */

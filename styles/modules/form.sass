@@ -1,7 +1,7 @@
 @use '../base/variables'
-@use './mixins'
+@use '../layouts/mixins'
 
-.register
+.container-form
   @include mixins.center-content()
   flex-direction: column
   min-height: 100vh
@@ -16,7 +16,7 @@
 
     label
       display: none
-    
+
     input, textarea
       padding: 1rem
       border-radius: 4px
