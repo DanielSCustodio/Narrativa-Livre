@@ -137,6 +137,10 @@ app.post('/stories/remove/:id', (req, res) => {
   });
 });
 
+app.use((req, res) => {
+  res.status(404).render('404');
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`Aplicação em execução na porta ${process.env.PORT}`);
 });
