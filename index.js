@@ -18,10 +18,6 @@ app.use(
 
 app.use(express.json()); //capturar o body
 
-app.get('/', (req, res) => {
-  res.render('home');
-});
-
 app.get('/register', (req, res) => {
   res.render('register');
 });
@@ -84,7 +80,7 @@ app.get('/stories/edit/:id', (req, res) => {
   });
 });
 
-app.get('/stories', (req, res) => {
+app.get('/', (req, res) => {
   const sql = 'SELECT * FROM story';
 
   pool.query(sql, (err, data) => {
@@ -94,7 +90,7 @@ app.get('/stories', (req, res) => {
     }
 
     const stories = data;
-    res.render('stories', { stories });
+    res.render('home', { stories });
   });
 });
 
