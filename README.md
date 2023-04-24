@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>Narrativa Livre</h1>
-  <img src="https://user-images.githubusercontent.com/29557187/234046742-8804866a-a9bd-4e3c-a511-246dbf91ea10.png"/>
+  <img src="https://user-images.githubusercontent.com/29557187/234066450-54e8813c-e98a-414a-aa5a-824fa1d581da.png"/>
   <p>Este é um projeto de uma aplicação web que permite aos usuários postar suas próprias histórias e realizar operações básicas de CRUD (criação, leitura, atualização, edição e exclusão). O projeto foi desenvolvido com as seguintes tecnologias: Node, Express, Handlebars, MySQL e SASS.</p>
   <h2>Guia de Instalação</h2>
   <ol>
