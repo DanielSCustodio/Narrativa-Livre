@@ -1,5 +1,7 @@
 @use '../base/variables'
 @use './mixins'
+@use '../base/base-mixins'
+
 
 .navbar
   background: variables.$second-color
@@ -10,6 +12,9 @@
   &-container
     @include mixins.center-content()
     padding: 1rem
+
+    @include base-mixins.mobile-tablet
+      margin: 0 1rem
 
   ul
     display:  flex

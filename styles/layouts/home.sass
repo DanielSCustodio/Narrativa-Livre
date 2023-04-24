@@ -1,11 +1,18 @@
 @use '../base/variables'
 @use './mixins'
+@use '../base/base-mixins'
 
 .stories-container
   @include mixins.center-content()
   flex-direction: column
   justify-content: start
   min-height: 100vh
+
+  @include base-mixins.mobile-tablet
+    max-width: 90%
+  
+  @include base-mixins.mobile-tablet
+    max-width: 90%
 
   .story
     display: flex
@@ -16,6 +23,7 @@
     background-color: #8116b324
     margin-bottom: 1rem
     box-shadow: 1px 1px 2px #00000066
+
 
     a:hover
       color: variables.$second-color

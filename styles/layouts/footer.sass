@@ -1,14 +1,22 @@
 @use '../base/variables'
 @use './mixins'
-  
-.footer  
+@use '../base/base-mixins'
+
+.footer
   background: variables.$second-color
   padding: 1rem 0
-  
+
   &-container
     @include mixins.center-content
     padding: 0
     color: variables.$bg-primary-color
+
+    @include base-mixins.mobile-tablet
+      max-width: 90%
+
+    @include base-mixins.mobile-smartphone
+      flex-direction: column
+    
 
     p
       font-size: 0.8rem
@@ -20,7 +28,8 @@
       font-weight: 100
       text-transform: uppercase
 
+      @include base-mixins.mobile-tablet
+        letter-spacing: 1rem
 
     img
       object-fit: contain
-  

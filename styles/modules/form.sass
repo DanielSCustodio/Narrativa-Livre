@@ -1,13 +1,21 @@
 @use '../base/variables'
 @use '../layouts/mixins'
+@use '../base/base-mixins'
+
 
 .container-form
   @include mixins.center-content()
   flex-direction: column
   min-height: 100vh
 
+  @include base-mixins.mobile-tablet
+    justify-content:  start
+
 .form
   width: 70%
+
+  @include base-mixins.mobile-tablet
+    width: 90%
 
   .form-control
     display: flex
